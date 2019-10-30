@@ -13,7 +13,7 @@ import java.util.Date;
  * Created by vivekverma on 2019-10-27.
  */
 @Entity
-@Table(name = "codesnippets")
+@Table(name = "mycodesnippets")
 @EntityListeners(AuditingEntityListener.class)
 @JsonIgnoreProperties(value = {"createdAt", "updatedAt"},
         allowGetters = true)
@@ -23,12 +23,12 @@ public class Code {
     private Long id;
 
     @NotBlank
-    @Column(name = "TITLE")
-    private String title;
+    @Column(name = "HEADING")
+    private String heading;
 
     @NotBlank
-    @Column(name = "CONTENT")
-    private String content;
+    @Column(name = "PURPOSEOFCODE")
+    private String purpose;
 
     @Column(nullable = false, updatable = false)
     @Temporal(TemporalType.TIMESTAMP)
@@ -48,20 +48,20 @@ public class Code {
         this.id = id;
     }
 
-    public String getTitle() {
-        return title;
+    public String getHeading() {
+        return heading;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setHeading(String heading) {
+        this.heading = heading;
     }
 
-    public String getContent() {
-        return content;
+    public String getPurpose() {
+        return purpose;
     }
 
-    public void setContent(String content) {
-        this.content = content;
+    public void setPurpose(String purpose) {
+        this.purpose = purpose;
     }
 
     public Date getCreatedAt() {

@@ -43,8 +43,8 @@ public class CodeController {
         Code code = codeRepository.findById(codeId)
                 .orElseThrow(() -> new ResourceNotFoundException("Code", "id", codeId));
 
-        code.setTitle(noteDetails.getTitle());
-        code.setContent(noteDetails.getContent());
+        code.setHeading(noteDetails.getHeading());
+        code.setPurpose(noteDetails.getPurpose());
 
         Code updatedCode = codeRepository.save(code);
         return updatedCode;
